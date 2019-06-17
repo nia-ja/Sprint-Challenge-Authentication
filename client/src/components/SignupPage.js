@@ -51,7 +51,6 @@ class SignupPage extends React.Component {
                         value={this.state.password}
                     />
                     <button type="submit">Sign up</button>
-
                 </form>
             </FormComp>
         )

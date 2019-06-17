@@ -11,7 +11,6 @@ class LoginPage extends React.Component {
     }
     handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(this.state);
         try {
             const {username, password} = this.state;
             const result = await api.post('/login', {
@@ -22,7 +21,6 @@ class LoginPage extends React.Component {
                 username: '',
                 password: ''
             })
-
             // save token in localStorage
             localStorage.setItem('token', result.data.token);
             this.props.history.push('/jokes')
@@ -38,6 +36,7 @@ class LoginPage extends React.Component {
     render() {
         return (
             <FormComp>
+                {/* TO-DO: make the for reusable for both signup and login */}
                 <form onSubmit={this.handleSubmit}>
                     <input 
                         type="text"
@@ -54,7 +53,6 @@ class LoginPage extends React.Component {
                         value={this.state.password}
                     />
                     <button type="submit">Login</button>
-
                 </form>
             </FormComp>
         )

@@ -5,17 +5,18 @@ import { CarouselComp, CarouselItem } from '../styles/';
 export default class Carousel extends Component {
   constructor(props){
     super(props);
-    // this.checkKey = this.checkKey.bind(this);
     this.state = {
       currentIndex: 0
     }
   }
   componentDidMount() {
+    // did user pressed any key
     window.addEventListener('keydown', this.checkKey.bind(this));
   }
   componentWillUnmount() {
     window.removeEventListener('keydown', this.checkKey.bind(this));
   }
+  // fire when left arrow button clicked or left arrow key pressed
   leftClick = () => {
     if (this.state.currentIndex === 0) {
       const lastSlide = this.props.jokes.length - 1;
@@ -25,7 +26,7 @@ export default class Carousel extends Component {
       this.setState({currentIndex: prevSlide})
     }
   }
-
+  // fire when right arrow button clicked or right arrow key pressed
   rightClick = () => {
     const lastSlide = this.props.jokes.length - 1;
     if (this.state.currentIndex === lastSlide) {
@@ -46,12 +47,18 @@ export default class Carousel extends Component {
       } else {
           return (
             <CarouselItem>
-                <p>No jokes today</p>
+              {/* TO-DO: Make spinner separate component */}
+              <div className="trinity-rings-spinner">
+                <div className="circle"></div>
+                <div className="circle"></div>
+                <div className="circle"></div>
+              </div>
             </CarouselItem>
           )
       }
   }
 
+  // check if the key pressed by user was left or right arrow
   checkKey = e => {
     console.log(e.keyCode);
     if (e.keyCode === 37) {
@@ -60,16 +67,15 @@ export default class Carousel extends Component {
     } else if (e.keyCode === 39) {
        // right arrow
        this.rightClick();
-    }
-}
+    } 
+  }
   
-  render(){
-      //{window.onKeyPress={this.checkKey}}
+  render() {
     return (
       <CarouselComp>
-        <div className="left-button" onClick={this.leftClick} /*onKeyPress={this.checkKey}*/>{"<"}</div>
+        {this.props.jokes.length > 0 && <div className="left-button" onClick={this.leftClick}>{"<"}</div>}
         {this.selectedImage(this.state.currentIndex)}
-        <div className="right-button" onClick={this.rightClick} /*onKeyPress={this.checkKey}*/>{">"}</div>
+        {this.props.jokes.length > 0 && <div className="right-button" onClick={this.rightClick}>{">"}</div>}
       </CarouselComp>
     )
   }

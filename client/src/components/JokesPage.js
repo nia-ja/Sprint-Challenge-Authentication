@@ -12,18 +12,20 @@ class JokesPage extends React.Component {
     async componentDidMount() {
         try {
             const result = await api.get('/jokes');
+            // suffle data obtained from the db
+            const resultRandom = result.data.sort(function() {
+                return .5 - Math.random();
+            });
             this.setState({
-                jokes: result.data,
+                jokes: resultRandom,
             })
         } catch (err) {
             console.log(err);
         }
-
     }
     render() {
-        console.log(this.state.jokes)
         return (
-            this.state.jokes && <Carousel jokes={this.state.jokes} />
+            <Carousel jokes={this.state.jokes} />
         )
     }
 }

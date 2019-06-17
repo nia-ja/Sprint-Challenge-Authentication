@@ -16,9 +16,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-
+        {/* NAVIGATION */}
         <Navigation logout={this.logout} />
+
+        {/* BACKGROUND IMAGE */}
+        {/* TO-DO: change inline styling to styled components */}
         <img src={BackgroundImage} alt="cloun" style={{height: "92vh", position: "absolute", right: "0"}} />
+        
         <div className="page-wrapper" style={{position: "relative"}}>
           {/* ROUTES */}
           <Route path="/login" component={LoginPage} />
