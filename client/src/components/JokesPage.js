@@ -1,8 +1,9 @@
 import React from 'react';
+
+import Carousel from './Carousel.js';
+
 import api from '../helpers/api';
 import withAuth from '../helpers/withAuth';
-
-// import UsersList from './UsersList.js';
 
 class JokesPage extends React.Component {
     state = {
@@ -20,13 +21,9 @@ class JokesPage extends React.Component {
 
     }
     render() {
+        console.log(this.state.jokes)
         return (
-            <>
-                <h1>JOKES</h1>
-                {this.state.jokes.map(joke => {
-                    return <p>{joke.joke}</p>
-                })}
-            </>
+            this.state.jokes && <Carousel jokes={this.state.jokes} />
         )
     }
 }

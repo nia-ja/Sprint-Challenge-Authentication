@@ -1,6 +1,8 @@
 import React from 'react';
 import api from '../helpers/api';
 
+import { FormComp } from '../styles/';
+
 class SignupPage extends React.Component {
     state ={
         username: '',
@@ -19,6 +21,8 @@ class SignupPage extends React.Component {
                 username: '',
                 password: ''
             })
+            localStorage.setItem('token', result.data.token);
+            this.props.history.push('/jokes');
         } catch (error) {
             console.log(error);
         }
@@ -30,7 +34,7 @@ class SignupPage extends React.Component {
     }
     render() {
         return (
-            <>
+            <FormComp>
                 <form onSubmit={this.handleSubmit}>
                     <input 
                         type="text"
@@ -49,7 +53,7 @@ class SignupPage extends React.Component {
                     <button type="submit">Sign up</button>
 
                 </form>
-            </>
+            </FormComp>
         )
     }
 }

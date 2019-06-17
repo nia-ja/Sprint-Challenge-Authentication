@@ -2,6 +2,8 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import api from '../helpers/api';
 
+import { FormComp } from '../styles/';
+
 class LoginPage extends React.Component {
     state ={
         username: '',
@@ -35,7 +37,7 @@ class LoginPage extends React.Component {
     }
     render() {
         return (
-            <>
+            <FormComp>
                 <form onSubmit={this.handleSubmit}>
                     <input 
                         type="text"
@@ -54,7 +56,7 @@ class LoginPage extends React.Component {
                     <button type="submit">Login</button>
 
                 </form>
-            </>
+            </FormComp>
         )
     }
 }

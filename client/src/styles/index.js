@@ -1,13 +1,27 @@
 import styled from "styled-components";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
+
+// colors
+const navBackground = "#262626";
+const darkRed = "#d05045";
+const lightRed = "#deada1";
+
 
 // Navigation Component
 export const NavComp = styled.nav`
     display: flex;
-    background: #439A86;
-    padding: 15px 0;
+    background: ${navBackground};
+    padding: 20px 0;
     justify-content: flex-end;
-    margin-bottom: 30px;
+    align-items: center;
+    img {
+        width: 2%;
+        height: 2%;
+        margin-right: 2%;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 `;
 
 const activeClassName = 'active-nav-item';
@@ -15,17 +29,106 @@ const activeClassName = 'active-nav-item';
 export const NavItem = styled(NavLink).attrs({
     activeClassName
 })`
-color:  #003742;
+color: ${darkRed};
 text-decoration: none;
-margin-right: 2%;
+margin-right: 3%;
+font-size: 20px;
+text-shadow: -0.5px -0.5px .5px rgba(255,255,255,.1), .5px .5px .5px rgba(255,255,255,.1);
 &:hover {
-    color: #E9D985;
+    color: ${lightRed};
     text-decoration: underline;
 }
 &.${activeClassName} {
     color: white;
     &:hover {
-        color: #E9D985;
+        color: ${lightRed};
     }
 }
 `
+
+// Login/Signup Component
+
+export const FormComp = styled.div`
+    width: 30%;
+    position: absolute;
+    top: 30vh;
+    left: 10%;
+    form {
+        display: flex;
+        flex-direction: column;
+        input {
+            background: #d7dddd;
+            font-size: 16px;
+            padding: 7px;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px dotted ${navBackground};
+            &:focus {
+                outline: none;
+                border-bottom: 1px solid ${navBackground};
+            }
+        }
+        button {
+            align-self: center;
+            color: white;
+            font-weight: bold;
+            background: ${darkRed};
+            padding: 10px 10%;
+            font-size: 18px;
+            border: none;
+            border-radius: 3px;
+            text-shadow: 3px 2px 3px rgba(38, 38, 38,.4);
+            box-shadow: 3px 2px 3px rgba(38, 38, 38,.4);
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+`;
+
+// Carousel Component
+
+export const CarouselComp = styled.div`
+    width: 40%;
+    height: 92vh;
+    position: absolute;
+    left: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .left-button, .right-button {
+        width: 10%;
+        font-size: 50px;
+        font-weight: bold;
+        color: ${darkRed};
+        height: 92vh;
+        display: flex;
+        align-items: center;
+        &:hover {
+            cursor: pointer;
+            transform: scale(2);
+        }
+    }
+    .left-button {
+        justify-content: flex-start;
+        padding-left: 2%;
+    }
+    .right-button {
+        justify-content: flex-end;
+        padding-right: 2%;
+    }
+`;
+
+export const CarouselItem = styled.div`
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+    p {
+        text-align: center;
+        font-size: 40px;
+        padding: 0 2%;
+        color: ${navBackground};
+    }
+`;

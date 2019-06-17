@@ -19,6 +19,10 @@ function register(req, res) {
   
     addUser(user)
       .then(saved => {
+          const token = generateToken(saved);
+          res.status(200).json({
+          message: `Welcome ${saved.username}!, have a token...`,
+          token });
         res.status(201).json(saved);
       })
       .catch(error => {
