@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:3300/api/',
+    baseURL: 'https://dead-dad-jokes.herokuapp.com/api/',
 })
 
 instance.interceptors.request.use(
