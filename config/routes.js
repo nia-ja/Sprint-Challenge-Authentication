@@ -1,7 +1,6 @@
 const axios = require('axios');
 const bcrypt = require('bcryptjs');
 
-//const generateToken = require('../auth/generateToken');
 const { addUser, getUserByFilter } = require('../helpers');
 const { authenticate, generateToken } = require('../auth/authenticate');
 

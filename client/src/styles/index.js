@@ -152,6 +152,7 @@ export const CarouselItem = styled.div`
     p {
         text-align: center;
         font-size: 40px;
+        line-height: 1.2em;
         font-family: 'Encode Sans Expanded', sans-serif;
         padding: 0 3%;
         color: ${navBackground};

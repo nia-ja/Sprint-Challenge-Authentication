@@ -60,7 +60,6 @@ export default class Carousel extends Component {
 
   // check if the key pressed by user was left or right arrow
   checkKey = e => {
-    console.log(e.keyCode);
     if (e.keyCode === 37) {
        // left arrow
        this.leftClick();
