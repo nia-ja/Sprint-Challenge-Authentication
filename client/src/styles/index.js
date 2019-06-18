@@ -11,15 +11,35 @@ const lightRed = "#deada1";
 export const NavComp = styled.nav`
     display: flex;
     background: ${navBackground};
-    padding: 20px 0;
-    justify-content: flex-end;
+    padding: 12px 3% 7px 3%;
+    justify-content: space-between;
     align-items: center;
-    img {
-        width: 2%;
-        height: 2%;
-        margin-right: 2%;
-        &:hover {
-            cursor: pointer;
+    h1 {
+        font-family: 'Special Elite', cursive;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        .red {
+            color: ${darkRed};
+        }
+        .line-through {
+            color: white;
+            text-decoration: line-through;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+    }
+    .navigation-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 50%;
+        img {
+            width: 5%;
+            height: 5%;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 `;
@@ -30,9 +50,10 @@ export const NavItem = styled(NavLink).attrs({
     activeClassName
 })`
 color: ${darkRed};
+font-family: 'Encode Sans Expanded', sans-serif;
 text-decoration: none;
 margin-right: 3%;
-font-size: 20px;
+font-size: 18px;
 text-shadow: -0.5px -0.5px .5px rgba(255,255,255,.1), .5px .5px .5px rgba(255,255,255,.1);
 &:hover {
     color: ${lightRed};
@@ -63,6 +84,7 @@ export const FormComp = styled.div`
             margin-bottom: 30px;
             border: none;
             border-bottom: 1px dotted ${navBackground};
+            font-family: 'Encode Sans Expanded', sans-serif;
             &:focus {
                 outline: none;
                 border-bottom: 1px solid ${navBackground};
@@ -75,6 +97,7 @@ export const FormComp = styled.div`
             background: ${darkRed};
             padding: 10px 10%;
             font-size: 18px;
+            font-family: 'Encode Sans Expanded', sans-serif;
             border: none;
             border-radius: 3px;
             text-shadow: 3px 2px 3px rgba(38, 38, 38,.4);
@@ -98,8 +121,9 @@ export const CarouselComp = styled.div`
     justify-content: center;
     .left-button, .right-button {
         width: 10%;
-        font-size: 50px;
+        font-size: 80px;
         font-weight: bold;
+        font-family: 'Encode Sans Expanded', sans-serif;
         color: ${darkRed};
         height: 92vh;
         display: flex;
@@ -128,6 +152,7 @@ export const CarouselItem = styled.div`
     p {
         text-align: center;
         font-size: 40px;
+        font-family: 'Encode Sans Expanded', sans-serif;
         padding: 0 2%;
         color: ${navBackground};
     }

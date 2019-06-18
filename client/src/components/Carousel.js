@@ -37,7 +37,7 @@ export default class Carousel extends Component {
     }
   }
 
-  selectedImage = (index) => {
+  selectedJoke = (index) => {
       if(this.props.jokes.length) {
         return (
             <CarouselItem>
@@ -74,7 +74,7 @@ export default class Carousel extends Component {
     return (
       <CarouselComp>
         {this.props.jokes.length > 0 && <div className="left-button" onClick={this.leftClick}>{"<"}</div>}
-        {this.selectedImage(this.state.currentIndex)}
+        {this.selectedJoke(this.state.currentIndex)}
         {this.props.jokes.length > 0 && <div className="right-button" onClick={this.rightClick}>{">"}</div>}
       </CarouselComp>
     )
