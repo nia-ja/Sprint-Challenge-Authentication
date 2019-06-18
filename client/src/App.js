@@ -25,6 +25,7 @@ class App extends React.Component {
         
         <div className="page-wrapper" style={{position: "relative"}}>
           {/* ROUTES */}
+          <Route exact path="/" component={JokesPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/signup" component={SignupPage} />
           <Route path="/jokes" component={JokesPage} />
