@@ -42,6 +42,7 @@ class SignupPage extends React.Component {
                         placeholder="Username"
                         onChange={this.handleChange}
                         value={this.state.username}
+                        required
                     />
                     <input 
                         type="password"
@@ -49,6 +50,7 @@ class SignupPage extends React.Component {
                         placeholder="Password"
                         onChange={this.handleChange}
                         value={this.state.password}
+                        required
                     />
                     <button type="submit">Sign up</button>
                 </form>

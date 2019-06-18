@@ -130,7 +130,7 @@ export const CarouselComp = styled.div`
         align-items: center;
         &:hover {
             cursor: pointer;
-            transform: scale(2);
+            transform: scale(1.8);
         }
     }
     .left-button {
@@ -153,7 +153,7 @@ export const CarouselItem = styled.div`
         text-align: center;
         font-size: 40px;
         font-family: 'Encode Sans Expanded', sans-serif;
-        padding: 0 2%;
+        padding: 0 3%;
         color: ${navBackground};
     }
 `;
